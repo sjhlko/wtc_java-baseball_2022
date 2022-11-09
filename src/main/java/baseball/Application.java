@@ -49,7 +49,7 @@ public class Application {
     public void checkStrike(){
         this.strike = 0;
         for (int i = 0; i < this.answer.size(); i++) {
-            if(this.answer.indexOf(i)==this.guessedNumber.charAt(i)){
+            if(this.answer.get(i)==Character.getNumericValue(this.guessedNumber.charAt(i))){
                 this.strike++;
             }
         }
@@ -58,11 +58,11 @@ public class Application {
     public void checkBall(){
         this.ball = 0;
         for (int i = 0; i < this.answer.size(); i++) {
-            if(this.answer.contains(this.guessedNumber.charAt(i))){
+            if(this.answer.contains(Character.getNumericValue(this.guessedNumber.charAt(i)))){
                 this.ball++;
             }
-            this.ball -= this.strike;
         }
+        this.ball -= this.strike;
     }
 
     public void printGuessResult(){
