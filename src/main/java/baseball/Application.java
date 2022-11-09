@@ -6,13 +6,15 @@ import java.util.List;
 
 public class Application {
     private List<Integer> answer = new ArrayList<>();
-    private String GuessedNumber = "";
+    private String guessedNumber = "";
+    private int strike = 0;
+    private int ball = 0;
     public void printStartMessage(){
         System.out.println("숫자 야구 게임을 시작합니다.");
     }
     public void getNumber(){
         System.out.println("숫자를 입력해주세요 : ");
-        this.GuessedNumber = Console.readLine();
+        this.guessedNumber = Console.readLine();
     }
     public void printSuccessMessage(){
         System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료\n" +
