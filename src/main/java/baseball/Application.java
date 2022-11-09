@@ -37,6 +37,17 @@ public class Application {
         }
     }
 
+    public void checkBall(){
+        this.ball = 0;
+        for (int i = 0; i < this.answer.size(); i++) {
+            if(this.answer.contains(this.guessedNumber.charAt(i))){
+                this.ball++;
+            }
+            this.ball -= this.strike;
+        }
+    }
+
+
 
 
     public static void main(String[] args) {
