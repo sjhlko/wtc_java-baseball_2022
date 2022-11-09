@@ -58,6 +58,12 @@ public class Application {
         }
     }
 
+    public boolean isSuccessed(){
+        if(this.strike==3) {
+            return true;
+        }
+        return false;
+    }
 
 
     public static void main(String[] args) {
