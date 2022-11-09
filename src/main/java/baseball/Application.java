@@ -28,6 +28,15 @@ public class Application {
             }
         }
     }
+    public void checkStrike(){
+        this.strike = 0;
+        for (int i = 0; i < this.answer.size(); i++) {
+            if(this.answer.indexOf(i)==this.guessedNumber.charAt(i)){
+                this.strike++;
+            }
+        }
+    }
+
 
 
     public static void main(String[] args) {
