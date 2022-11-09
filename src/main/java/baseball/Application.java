@@ -13,8 +13,10 @@ public class Application {
         System.out.println("숫자 야구 게임을 시작합니다.");
     }
     public void getNumber(){
-        System.out.println("숫자를 입력해주세요 : ");
+        System.out.print("숫자를 입력해주세요 : ");
         this.guessedNumber = Console.readLine();
+        if(this.guessedNumber.length()!=3)
+            throw new IllegalArgumentException();
     }
     public void printSuccessMessage(){
         System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료\n" +
