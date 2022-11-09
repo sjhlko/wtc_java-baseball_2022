@@ -3,6 +3,7 @@ import camp.nextstep.edu.missionutils.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Application {
     private List<Integer> answer = new ArrayList<>();
@@ -21,6 +22,21 @@ public class Application {
     public void printSuccessMessage(){
         System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료\n" +
                 "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+    }
+    public int decideNextStep(){
+        this.printSuccessMessage();
+        String next = Console.readLine();
+        if(Objects.equals(next, "1") || Objects.equals(next, "2"))
+            return Integer.parseInt(next);
+        else{
+            throw new IllegalArgumentException();
+        }
+    }
+
+    public void initValues(){
+        this.strike = 0;
+        this.ball = 0;
+        this.answer = new ArrayList<>();
     }
     public void makeAnswer(){
         while (this.answer.size() < 3) {
