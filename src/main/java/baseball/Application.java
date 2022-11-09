@@ -90,20 +90,27 @@ public class Application {
         }
     }
 
-    public boolean isSuccessed(){
-        if(this.strike==3) {
-            return true;
+    public void run(){
+        this.printStartMessage();
+        while (true){
+            this.initValues();
+            this.makeAnswer();
+            System.out.println(this.answer.toString());
+            this.guessUntilSuccess();
+            int nextStep = this.decideNextStep();
+            if(nextStep==2){
+                break;
+            }
         }
-        return false;
+
+
     }
 
 
     public static void main(String[] args) {
         // TODO: 프로그램 구현
         Application application = new Application();
-        application.makeAnswer();
-        System.out.println(application.answer);
-        application.makeAnswer();
-        System.out.println(application.answer);
+        application.run();
+
     }
 }
