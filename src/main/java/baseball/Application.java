@@ -47,6 +47,16 @@ public class Application {
         }
     }
 
+    public void printGuessResult(){
+        if(this.strike==0&&this.ball==0)
+            System.out.println("낫싱");
+        if (this.ball!=0) {
+            System.out.printf("%d볼 ",this.ball);
+        }
+        if (this.strike!=0) {
+            System.out.printf("%d스트라이크\n",this.strike);
+        }
+    }
 
 
 
